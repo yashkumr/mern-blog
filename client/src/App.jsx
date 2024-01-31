@@ -6,8 +6,9 @@ import SignUp from "./pages/SignUp.jsx";
 import Projects from "./pages/Projects.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
-import Header from "./dashboard/Header.jsx";
+import Header from "./components/Header.jsx";
 import { Toaster } from "react-hot-toast";
+import MainFooter from "./components/Footer.jsx";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <MainFooter/>
     </>
   );
 }
