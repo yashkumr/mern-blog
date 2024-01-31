@@ -6,10 +6,12 @@ import SignUp from "./pages/SignUp.jsx";
 import Projects from "./pages/Projects.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
+import Header from "./dashboard/Header.jsx";
 
 function App() {
   return (
     <>
+    <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
