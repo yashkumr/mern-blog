@@ -7,11 +7,14 @@ import Projects from "./pages/Projects.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import Header from "./dashboard/Header.jsx";
+import { Toaster } from "react-hot-toast";
+
 
 function App() {
   return (
     <>
     <Header/>
+    <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
