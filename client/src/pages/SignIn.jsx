@@ -39,7 +39,7 @@ const SignIn = () => {
 
     }catch(error){
              console.log(error);
-             toast.error("Something went wrong in login ");
+             toast.error("Somethin wrong in login");
     }
   }
 

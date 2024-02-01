@@ -9,14 +9,28 @@ import PageNotFound from "./pages/PageNotFound.jsx";
 import Header from "./components/Header.jsx";
 import { Toaster } from "react-hot-toast";
 import MainFooter from "./components/Footer.jsx";
+import PrivateRoute from "./components/Routes/Private.jsx";
+import AdminRoute from "./components/Routes/AdminRoute.jsx"
+
+import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
+import UserDashboard from "./pages/user/UserDashboard.jsx";
 
 
 function App() {
   return (
     <>
-    <Header/>
-    <Toaster />
+      <Header />
+      <Toaster />
       <Routes>
+
+        <Route path="/dashboard" element={<AdminRoute/>}>
+          <Route path="admin" element={<AdminDashboard />} />
+        </Route>
+
+        <Route path="/dashboard" element={<PrivateRoute/>}>
+          <Route path="user" element={<UserDashboard/>} />
+        </Route>
+
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/sign-in" element={<SignIn />} />
@@ -25,7 +39,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-      <MainFooter/>
+      <MainFooter />
     </>
   );
 }
