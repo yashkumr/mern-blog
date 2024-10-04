@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
-import { set } from 'mongoose';
+
 
 export default function DashPosts() {
   const { currentUser } = useSelector((state) => state.user);
@@ -16,6 +16,7 @@ export default function DashPosts() {
       try {
         const res = await fetch(`/api/post/getposts?userId=${currentUser._id}`);
         const data = await res.json();
+        console.log(data);
         if (res.ok) {
           setUserPosts(data.posts);
           if (data.posts.length < 9) {
@@ -87,6 +88,8 @@ export default function DashPosts() {
               </Table.HeadCell>
             </Table.Head>
             {userPosts.map((post) => (
+              <>
+             
               <Table.Body className='divide-y'>
                 <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
                   <Table.Cell>
@@ -131,6 +134,7 @@ export default function DashPosts() {
                   </Table.Cell>
                 </Table.Row>
               </Table.Body>
+               </>
             ))}
           </Table>
           {showMore && (
