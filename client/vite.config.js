@@ -12,4 +12,11 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      external: [
+        'redux-persist/integration/react' // Add this line to externalize the module
+      ]
+    }
+  }
 })
