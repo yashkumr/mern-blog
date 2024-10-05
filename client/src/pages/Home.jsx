@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import CallToAction from '../components/CallToAction';
+import CallToAction from '../components/CallToAction.jsx';
 import { useEffect, useState } from 'react';
-import PostCard from '../components/PostCard';
+import PostCard from '../components/PostCard.jsx';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
